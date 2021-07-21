@@ -37,6 +37,13 @@ namespace WPFTutorial
         {
             recordModel.AddRecord(a_name, a_surname, a_age);
         }
+        public void AddModelData(RecordModel model)
+        {
+            for(int i = 0; i < model.Records.Count; i ++)
+            {
+                recordModel.AddRecord(model.Records[i]);
+            }
+        }
         public void RemoveRecord(int idx)
         {
             recordModel.RemoveRecord(idx);
@@ -51,6 +58,11 @@ namespace WPFTutorial
             recordModel.AddRecord("Brent", "Kingma", 23);
             recordModel.AddRecord("Chloe", "Kingma", 20);
             recordModel.AddRecord("Lachlan", "Brooks", 24);
+        }
+        public RecordModel GetModel()
+        {
+            recordModel.SelectedRecord = null;
+            return recordModel;
         }
 
     }

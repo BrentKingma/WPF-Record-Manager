@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFTutorial"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" Closing="Window_Closing">
     <Window.Resources>
         <local:RecordModel x:Key="recordModel"/>
     </Window.Resources>
@@ -43,7 +43,6 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="95"/>
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Top">
                     <Label Content="Name:"/>
@@ -55,7 +54,7 @@
                     <TextBox x:Name="editSurnameTextBox" Text="{Binding SelectedRecord.surname, Source={StaticResource recordModel}}" IsEnabled="False" Margin="5,5,5,2.5"/>
                     <TextBox x:Name="editAgeTextBox" Text="{Binding SelectedRecord.age, Source={StaticResource recordModel}}" IsEnabled="False" Margin="5,5,5,2.5"/>
                 </StackPanel>
-                <Button x:Name="confirmEdit" Grid.Column="1" Content="Save" Width="45" Height="19" VerticalAlignment="Bottom" HorizontalAlignment="Right" IsEnabled="False" Click="confirmEdit_Click"  Margin="0,0,5,0"/>
+                <Button x:Name="confirmEdit" Grid.Column="1" Content="Save" Width="45" Height="19"  HorizontalAlignment="Right" IsEnabled="False" Click="confirmEdit_Click"  Margin="0,0,5,0"/>
             </Grid>     
             <StackPanel Grid.Row="1" Margin="5, 0, 0, 0" VerticalAlignment="Bottom">
                 <Button x:Name="btnEditRecord" Margin="0, 10, 0, 0" Click="BtnEditRecord_Click" IsEnabled="False">Edit Record</Button>

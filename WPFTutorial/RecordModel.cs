@@ -46,6 +46,11 @@ namespace WPFTutorial
             obRecords.Add(new UserData(a_name, a_surname, a_age));
             notifyChange("Records");
         }
+        public void AddRecord(UserData record)
+        {
+            obRecords.Add(record);
+            notifyChange("Records");
+        }
         public void RemoveRecord(int idx)
         {
             obRecords.RemoveAt(idx);
